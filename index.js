@@ -5,7 +5,7 @@ app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(request, response) {
-  response.send('Heroku CICD Test version 1!')
+  response.send('Heroku CICD Test version one!')
 })
 
 app.listen(app.get('port'), function() {
