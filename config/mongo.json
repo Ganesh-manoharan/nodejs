@@ -1,0 +1,13 @@
+{
+  "development": {
+    "database": "Heroku-test",
+    "host": "localhost"
+  },
+  "test": {
+    "database": "Heroku-test",
+    "host": "localhost"
+  },
+  "production": {
+    "use_env_variable": "MONGODB_URI"
+  }
+}
