@@ -1,1 +1,1 @@
-web: bin/nginx bundle exec node -c config/nginx.conf.rb
+web: bin/nginx exec node -c config/nginx.conf.rb
