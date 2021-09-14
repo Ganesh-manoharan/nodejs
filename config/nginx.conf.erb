@@ -1,0 +1,30 @@
+upstream myapp {
+    server 127.0.0.1:5000;
+}
+
+limit_req_zone $binary_remote_addr zone=login:10m rate=1r/s;
+
+server {
+    listen 80;
+    server_name cn-node-app.herokuapp.com;
+  
+
+  
+    location / {
+        proxy_pass http://cn-node-app.herokuapp.com;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+    }
+    
+    location /account/login/ {
+        # apply rate limiting
+        limit_req zone=login burst=5;
+    
+        # boilerplate copied from location /
+        proxy_pass http://cn-node-prod-app.herokuapp.com;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+    }
+}
