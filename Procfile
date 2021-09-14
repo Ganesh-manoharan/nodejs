@@ -1,1 +1,1 @@
-web: bin/nginx -c config/nginx.conf.rb
+web: bin/nginx npm start
