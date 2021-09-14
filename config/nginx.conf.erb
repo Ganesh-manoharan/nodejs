@@ -1,6 +1,7 @@
 daemon off;
 # Heroku dynos have at least 4 cores
 worker_processes <%= ENV['NGINX_WORKERS'] || 4 %>;
+error_log /dev/stdout info;
 
 events {
     use epoll;
@@ -15,9 +16,9 @@ http {
     server_tokens off;
 
     log_format main '$time_iso8601 - $status $request - client IP: $http_x_forwarded_for - to $upstream_addr - upstream status: $upstream_status, upstream_response_time $upstream_response_time, request_time $request_time';
-    access_log /dev/stdout main;
+    access_log /dev/stdout;
     # set the following to "debug" when diagnosing an issue
-    error_log /dev/stdout notice;
+    error_log /dev/stdout;
     log_not_found on;
 
     include mime.types;
