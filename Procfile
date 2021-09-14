@@ -1,1 +1,1 @@
-web: bin/nginx -c config/nginx.conf
+web: bin/nginx node index.js -c config/nginx.conf
