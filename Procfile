@@ -1,1 +1,1 @@
-web: bin/nginx npm start
+web: bin/nginx -c config/nginx.conf.erb
