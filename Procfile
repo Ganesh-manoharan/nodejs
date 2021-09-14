@@ -1,1 +1,1 @@
-web: node index.js
+web: bin/nginx -c config/nginx.conf.erb
