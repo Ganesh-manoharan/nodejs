@@ -1,7 +1,6 @@
 var express = require('express')
 var app = express()
-var httpProxy = require('http-proxy')
-//var port = process.env.PORT || 5000;
+
 
 app.set('port', (process.env.PORT || 5000))
 app.use(express.static(__dirname + '/public'))
@@ -15,15 +14,6 @@ app.listen(app.get('port'), function() {
 })
 
 
-//var port = process.env.PORT || 5000;
-
-var routing = {
-'/api': { port: process.env.DEVICES_PORT || 80, host: process.env.DEVICES_URI }
-}
-
-var server = httpProxy.createServer(
-require('./lib/uri-middleware')(routing)
-).listen(5000);
 
 //Mongoose Settings
 //-----------------------------------------
