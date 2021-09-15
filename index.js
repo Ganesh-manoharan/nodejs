@@ -13,7 +13,9 @@ app.get('/', function(request, response) {
  // console.log("Node app is running at localhost:" + app.get('port'))
 //})
 
-app.listen('/tmp/nginx.socket');
+app.listen("/tmp/nginx.socket", () => {
+    fs.openSync("/tmp/app-initialized", "w");
+  });
 
 //Mongoose Settings
 //-----------------------------------------
