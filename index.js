@@ -14,7 +14,7 @@ app.listen(app.get('port'), function() {
 
 var httpProxy = require('http-proxy');
 
-var port = process.env.PORT || 8000;
+var port = process.env.PORT || 5000;
 
 var routing = {
   '/api': { port: process.env.DEVICES_PORT || 80, host: process.env.DEVICES_URI }
