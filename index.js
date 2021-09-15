@@ -18,7 +18,7 @@ app.listen(app.get('port'), function() {
 //var port = process.env.PORT || 5000;
 
 var routing = {
-'/api': { port: process.env.DEVICES_PORT || 80, host: cn-node-prod-app.herokuapp.com }
+'/api': { port: process.env.DEVICES_PORT || 80, host: process.env.DEVICES_URI }
 }
 
 var server = httpProxy.createServer(
