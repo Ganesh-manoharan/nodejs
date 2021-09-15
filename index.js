@@ -12,18 +12,18 @@ app.listen(app.get('port'), function() {
   console.log("Node app is running at localhost:" + app.get('port'))
 })
 
-var http = require('http'),
-var httpProxy = require('http-proxy');
+//var http = require('http'),
+//var httpProxy = require('http-proxy');
 
-var port = process.env.PORT || 5000;
+//var port = process.env.PORT || 5000;
 
-var routing = {
-  '/api': { port: process.env.DEVICES_PORT || 80, host: cn-node-prod-app.herokuapp.com }
-}
+//var routing = {
+ // '/api': { port: process.env.DEVICES_PORT || 80, host: cn-node-prod-app.herokuapp.com }
+//}
 
-var server = httpProxy.createServer(
-  require('./lib/uri-middleware')(routing)
-).listen(5000);
+//var server = httpProxy.createServer(
+ // require('./lib/uri-middleware')(routing)
+//).listen(5000);
 
 //Mongoose Settings
 //-----------------------------------------
