@@ -1,2 +1,1 @@
-web: bin/start-nginx
-worker: node index.js
+web: bin/start-nginx -c config/nginx.conf
